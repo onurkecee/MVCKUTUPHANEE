@@ -1,0 +1,29 @@
+﻿@model MvcKutuphane.Models.Entity.TBLKategori
+
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+
+}
+
+@*<script src="~/Scripts/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<link href="~/Content/sweetalert/sweet-alert.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />*@
+
+
+<form class="form-group" method="post">
+    <div style="margin-top:15px;">
+        <label>Kategori Adı</label>
+        @*  @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })*@
+        <input type="text" name="AD" class="form-control" />
+        @Html.ValidationMessageFor(x => x.AD, "", new { @style = "color:red" })
+    </div>
+    @ViewBag.Mesaj
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="kategoriekle" onclick="YeniKategori()">KATEGORİ EKLE</button>
+    </div>
+</form>
+
+

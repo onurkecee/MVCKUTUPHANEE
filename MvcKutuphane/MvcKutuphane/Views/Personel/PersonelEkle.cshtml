@@ -1,0 +1,39 @@
+﻿@model MvcKutuphane.Models.Entity.TBLPersonel
+
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    <div style="margin-top:15px;">
+        <label>Personel Ad Soyad</label>
+        @Html.TextBoxFor(x => x.PERSONEL, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PERSONEL, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px;">
+        <label>Kullanıcı Ad</label>
+        @Html.TextBoxFor(x => x.KULLANICIADI, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.KULLANICIADI, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px;">
+        <label>Şifre</label>
+        @Html.TextBoxFor(x => x.SIFRE, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.SIFRE, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px;">
+        <label>Telefon</label>
+        @Html.TextBoxFor(x => x.TELEFON, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.TELEFON, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px;">
+        <label>Okul</label>
+        @Html.TextBoxFor(x => x.OKUL, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.OKUL, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="Btn1">PERSONEL EKLE</button>
+    </div>
+
+</form>

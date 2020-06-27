@@ -1,0 +1,35 @@
+﻿@using MvcKutuphane.Models.Entity
+@model List<TBLMesajlar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutPanel.cshtml";
+}
+
+<div style="text-align:center; background-color:#453f3f; width:400px;">
+    <table class="table table-bordered" style="margin-top:15px;">
+        <tr>
+            <th style="text-align:center"><span style="color:white">GELEN MESAJLAR</span></th>
+        </tr>
+    </table>
+</div>
+
+<div style="margin-top:10px;">
+    <table class="table table-bordered">
+        <tr style="background-color:gray; color:white;">
+            <th>Gönderen</th>
+            <th>Konu</th>
+            <th>Mesaj</th>
+            <th>Tarih</th>
+        </tr>
+        @foreach (var mesaj in Model)
+        {
+            <tr style="background-color:darkgray;">
+                <td>@mesaj.GÖNDEREN</td>
+                <td>@mesaj.KONU</td>
+                <td>@mesaj.ICERIK</td>
+                <td>@mesaj.TARIH</td>
+            </tr>
+        }
+    </table>
+</div>

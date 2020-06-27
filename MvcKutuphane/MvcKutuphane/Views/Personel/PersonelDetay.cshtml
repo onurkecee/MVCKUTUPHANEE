@@ -1,0 +1,102 @@
+﻿@model MvcKutuphane.Models.Entity.TBLPersonel
+
+@{
+    ViewBag.Title = "PersonelDetay";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>@Html.DisplayFor(x=>x.PERSONEL) Personel Bilgileri</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/webpersoneldetay/assets/img/favicon.png" rel="icon">
+    <link href="~/webpersoneldetay/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/webpersoneldetay/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/webpersoneldetay/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="~/webpersoneldetay/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/webpersoneldetay/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="~/webpersoneldetay/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/webpersoneldetay/assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/webpersoneldetay/assets/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: iPortfolio - v1.2.1
+    * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+    <main>
+        <section id="about" class="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4" data-aos="fade-right">
+                        <img src="~/webpersoneldetay/assets/img/a.jpeg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left" style="margin-top:40px;">
+                        <h3>@Html.DisplayFor(x => x.PERSONEL) Kütüphane Personel Kartı</h3>
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li style="font-size:15px;"><i class="icofont-rounded-right"></i> <strong style="font-size:15px;">Personel Id:</strong> @Html.DisplayFor(x => x.ID)</li>
+                                    <li style="font-size:15px;"><i class="icofont-rounded-right"></i> <strong style="font-size:15px;">Ad Soyad:</strong> @Html.DisplayFor(x => x.PERSONEL)</li>
+                                    <li style="font-size:15px;"><i class="icofont-rounded-right"></i> <strong style="font-size:15px;">Kullanıcı Adı:</strong> @Html.DisplayFor(x => x.KULLANICIADI)</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li style="font-size:15px;"><i class="icofont-rounded-right"></i> <strong style="font-size:15px;">Telefon:</strong> @Html.DisplayFor(x => x.TELEFON)</li>
+                                    <li style="font-size:15px;"><i class="icofont-rounded-right"></i> <strong style="font-size:15px;">Okul:</strong> @Html.DisplayFor(x => x.OKUL)</li>
+                                    <li style="font-size:15px;"><i class="icofont-rounded-right"></i> <strong style="font-size:15px;">Meslek:</strong> Kütüphane Personeli</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p style="text-align:justify">
+                            Kütüphane personellerine ait personel bilgi kartıdır.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- Vendor JS Files -->
+    <script src="~/webpersoneldetay/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="~/webpersoneldetay/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/webpersoneldetay/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="~/webpersoneldetay/assets/vendor/php-email-form/validate.js"></script>
+    <script src="~/webpersoneldetay/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="~/webpersoneldetay/assets/vendor/counterup/counterup.min.js"></script>
+    <script src="~/webpersoneldetay/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/webpersoneldetay/assets/vendor/venobox/venobox.min.js"></script>
+    <script src="~/webpersoneldetay/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="~/webpersoneldetay/assets/vendor/typed.js/typed.min.js"></script>
+    <script src="~/webpersoneldetay/assets/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/webpersoneldetay/assets/js/main.js"></script>
+
+</body>
+
+</html>

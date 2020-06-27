@@ -1,0 +1,44 @@
+﻿@using MvcKutuphane.Models.Entity;
+@model IList<TBLHareket>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div style="text-align:center; background-color:#453f3f; width:400px;">
+    <table class="table table-bordered" style="margin-top:15px;">
+        <tr>
+            <th style="text-align:center"><span style="color:white">İADESİ ALINAN KİTAPLAR</span></th>
+        </tr>
+    </table>
+</div>
+
+<div style="margin-top:10px;">
+    <table class="table table-bordered">
+        <tr style="background-color:gray; color:white;">
+            <th>İŞLEM ID</th>
+            <th>KİTAP ADI</th>
+            <th>ÜYE</th>
+            <th>PERSONEL</th>
+            <th>ALIŞ TARİHİ</th>
+            <th>ÜYE İADE TARİH</th>
+            <th>DETAYLAR</th>
+        </tr>
+
+        @foreach (var hareket in Model)
+        {
+            <tr style="background-color:darkgray;">
+                <td>@hareket.ID</td>
+                <td>@hareket.TBLKitap.AD</td>
+                <td>@hareket.TBLUyeler.AD @hareket.TBLUyeler.SOYAD</td>
+                <td>@hareket.TBLPersonel.PERSONEL</td>
+                <td>@Convert.ToDateTime(hareket.ALISTARIH).ToString("dd/MM/yyyy")</td>
+                <td>@Convert.ToDateTime(hareket.UYEGETIRTARIH).ToString("dd/MM/yyyy")</td>
+                <td><a href="/Odunc/Odunciade/@hareket.ID" class="btn btn-primary">DETAYLAR</a></td>
+            </tr>
+        }
+    </table>
+</div>
+
+

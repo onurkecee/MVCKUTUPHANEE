@@ -1,0 +1,50 @@
+﻿@using MvcKutuphane.Models.Entity;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<TBLKategori>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+
+
+<div style="text-align:center; background-color:#453f3f; width:400px;">
+    <table class="table table-bordered" style="margin-top:15px;">
+        <tr>
+            <th style="text-align:center"><span style="color:white">KATEGORİLER</span></th>
+        </tr>
+    </table>
+</div>
+
+<div style="margin-top:10px;">
+    <table class="table table-bordered">
+        <tr style="background-color:gray; color:white;">
+            <th>ID</th>
+            <th>KATEGORİ ADI</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+        </tr>
+
+        @foreach (var kategori in Model)
+        {
+            <tr style="background-color:darkgray;">
+                <td>@kategori.ID</td>
+                <td>@kategori.AD</td>
+                <td><a href="/Kategori/KategoriSil/@kategori.ID" class="btn btn-danger">SİL</a></td>
+                <td><a href="/Kategori/KategoriGetir/@kategori.ID" class="btn btn-success">GÜNCELLE</a></td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+
+<a href="/Kategori/KategoriEkle" class="btn btn-primary">Yeni Kategori Ekle</a>
+<a href="/Kategori/PasifKategoriler" class="btn btn-warning">Pasif Kategoriler</a>
+
+
+

@@ -1,0 +1,52 @@
+﻿@model MvcKutuphane.Models.Entity.TBLPersonel
+
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+        <div>
+            @Html.LabelFor(x => x.ID)
+            @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+        </div>
+        <br />
+        <div>
+            <label>Personel Ad Soyad</label>
+            @Html.TextBoxFor(x => x.PERSONEL, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.PERSONEL, "", new { @style = "color:red" })
+        </div>
+        <br />
+        <div>
+            <label>Kullanıcı Adı</label>
+            @Html.TextBoxFor(x => x.KULLANICIADI, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.KULLANICIADI, "", new { @style = "color:red" })
+        </div>
+        <br />
+        <div>
+            <label>Şifre</label>
+            @Html.TextBoxFor(x => x.SIFRE, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.SIFRE, "", new { @style = "color:red" })
+        </div>
+        <br />
+        <div>
+            <label>Telefon</label>
+            @Html.TextBoxFor(x => x.TELEFON, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.TELEFON, "", new { @style = "color:red" })
+        </div>
+        <br />
+        <div>
+            <label>Okul</label>
+            @Html.TextBoxFor(x => x.OKUL, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.OKUL, "", new { @style = "color:red" })
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-warning">Personel Bilgileri Güncelle</button>
+    </div>
+}
+
+

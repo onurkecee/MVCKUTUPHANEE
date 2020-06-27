@@ -1,0 +1,62 @@
+﻿@using MvcKutuphane.Models.Entity;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<TBLUyeler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div style="text-align:center; background-color:#453f3f; width:400px;">
+    <table class="table table-bordered" style="margin-top:15px;">
+        <tr>
+            <th style="text-align:center"><span style="color:white">ÜYELER</span></th>
+        </tr>
+    </table>
+</div>
+
+@using (Html.BeginForm("Index", "Uye", FormMethod.Post))
+{
+    <div style="margin-bottom:15px; margin-top:15px; margin-right:600px;">
+        @Html.TextBox("p", null, new { @class = "form-control", @placeholder = "Üye Ara..." })
+    </div>
+}
+
+<div style="margin-top:10px;">
+    <table class="table table-bordered">
+        <tr style="background-color:gray; color:white;">
+            <th>ID</th>
+            <th>AD</th>
+            <th>SOYAD</th>
+            <th>MAİL</th>
+            <th>OKUL</th>
+            <th>DETAY</th>
+            <th>KİTAP GEÇMİŞİ</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+            
+        </tr>
+
+        @foreach (var uye in Model)
+        {
+            <tr style="background-color:darkgray;">
+                <td>@uye.ID</td>
+                <td>@uye.AD</td>
+                <td>@uye.SOYAD</td>
+                <td>@uye.MAIL</td>
+                <td>@uye.OKUL</td>
+                <td><a href="/Uye/UyeDetay/@uye.ID" class="btn btn-warning">ÜYE DETAY</a></td>
+                <td><a href="/Uye/UyeKitapGecmis/@uye.ID" class="btn btn-info">KİTAP GEÇMİŞİ</a></td>
+                <td><a href="/Uye/UyeSil/@uye.ID" class="btn btn-danger">SİL</a></td>
+                <td><a href="/Uye/UyeGetir/@uye.ID" class="btn btn-success">GÜNCELLE</a></td>
+            </tr>
+        }
+
+    </table>
+</div>
+@*Sayfa Listeleme Sayısını Gösterme*@
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+
+<a href="/Uye/UyeEkle" class="btn btn-primary">Yeni Üye Ekle</a>
+
